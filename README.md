@@ -36,4 +36,4 @@ int main()
   }
 }
 ```
-The runMenu() method returns the index of the option chosen by the user. What's the index? It depends ont he order that the options were given. For example, in the code above, "OPTION 1" is index 0, and so choosing it will return 0, "OPTION 2" has index 1, and choosing it will return 1, and so on and so forth. If the user presses q,  the program will send -1 and exit, which you should handle appropriately. 
+The runMenu() method returns the index of the option chosen by the user. What's the index? It depends ont he order that the options were given. For example, in the code above, _OPTION 1_ is index 0, and so choosing it will return 0, _OPTION 2_ has index 1, and choosing it will return 1, and so on and so forth. If the user presses q,  the program will send -1 and exit, which you should handle appropriately. 
