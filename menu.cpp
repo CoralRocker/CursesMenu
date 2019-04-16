@@ -10,11 +10,15 @@ menu::menu(WINDOW *win)
 	this->addOpts = false;
 	this->win = win;	
 	getmaxyx(this->win, this->h, this->w);
+	optPtrUsed = false;
+	argPtrUsed = false;
 };
 
 menu::~menu()
 {
-	free(this->argPtr);
+	if(argPtrUsed)
+		free(this->argPtr);
+	if(optPtrUsed)
 	free(this->optPtr);
 };
 
@@ -40,6 +44,7 @@ void menu::setOpts(int numOpts, ...)
 		this->optPtr[i] = va_arg(valList, char*);
 	}
 	va_end(valList);
+	optPtrUsed = true;
 }	
 
 /* Sets additional options for Menu */
@@ -54,6 +59,7 @@ void menu::addStrings(int numOpts, ...)
 	for(int i = 0; i < this->numOpts; i++)
 		this->argPtr[i] = va_arg(valList, char*);
 	va_end(valList);
+	argPtrUsed = true;
 }
 
 /* Runs Menu after input from setOpts method */

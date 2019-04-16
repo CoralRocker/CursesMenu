@@ -12,6 +12,7 @@ class menu
 		int runMenu();
 	private:
 		char **optPtr, **argPtr;
+		bool optPtrUsed, argPtrUsed;
 		int numArgs, numOpts, option, h, w;
 		bool addOpts;
 		WINDOW *win;
